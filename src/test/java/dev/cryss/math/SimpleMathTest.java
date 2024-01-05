@@ -2,7 +2,6 @@ package dev.cryss.math;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
@@ -105,9 +104,9 @@ class SimpleMathTest {
         var expectedMessage = "/ by zero";
 
         ArithmeticException actual =  assertThrows (ArithmeticException.class, ()->
-                math.division ((int) firstNumber, zero), ()-> "Divion By Zero must Throws ArithmeticException.class");
+                math.division ((int) firstNumber, zero), "Divion By Zero must Throws ArithmeticException.class");
 
-        assertEquals (expectedMessage, actual.getMessage (), ()-> "Unexpected exception message!");
+        assertEquals (expectedMessage, actual.getMessage (), "Unexpected exception message!");
 
     }
 
