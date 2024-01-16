@@ -1,4 +1,7 @@
 package dev.cryss;
 
-public class FooBar {
+public class
+
+
+FooBar {
 }
