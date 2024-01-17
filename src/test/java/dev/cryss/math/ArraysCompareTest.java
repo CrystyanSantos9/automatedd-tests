@@ -2,6 +2,7 @@ package dev.cryss.math;
 
 
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
 
@@ -11,6 +12,7 @@ import java.util.concurrent.TimeUnit;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@Order (1)
 class ArraysCompareTest {
 
     //test[System Under Test]_[Condition or State change]_[Expected Results]

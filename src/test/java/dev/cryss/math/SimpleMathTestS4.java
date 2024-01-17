@@ -9,6 +9,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.CsvFileSource;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
@@ -38,11 +40,15 @@ class SimpleMathTestS4 {
         System.out.println ("Para limpar o cenário após cada teste");
     }
 
-
-    @DisplayName ("Test 10.0 / 2 = 5.0")
+    //    @MethodSource("testDivisionInputParameters")
+    //    @MethodSource()
+    //    @CsvSource({
+    //            "10.0", "2", "5.0",
+    //            "8.0", "2.0", "4.0"
+    //    })
+    @DisplayName ("Test double division [firstNumber, secondNumber, expected]")
     @ParameterizedTest
-//    @MethodSource("testDivisionInputParameters")
-    @MethodSource()
+    @CsvFileSource(resources = "/testDivision.csv")
     void division(double firstNumber, double secondNumber, double expected) {
 
         Double actual = math.division (firstNumber, secondNumber);
@@ -54,12 +60,12 @@ class SimpleMathTestS4 {
     }
 
 //    public static Stream<Arguments> testDivisionInputParameters(){
-public static Stream<Arguments> division(){
-        return Stream.of (
-                Arguments.of (10.0D, 2D, 5.0D ),
-                Arguments.of (71D, 14D, 5.07D ),
-                Arguments.of (18.3D, 3.1D, 5.90D )
-        );
-    }
+//public static Stream<Arguments> division(){
+//        return Stream.of (
+//                Arguments.of (10.0D, 2D, 5.0D ),
+//                Arguments.of (71D, 14D, 5.07D ),
+//                Arguments.of (18.3D, 3.1D, 5.90D )
+//        );
+//    }
 
 }
